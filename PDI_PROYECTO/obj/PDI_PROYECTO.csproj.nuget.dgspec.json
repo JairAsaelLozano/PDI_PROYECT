@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Escuela_Jair\\PDI_PROYECTO\\PDI_PROYECTO\\PDI_PROYECTO.csproj": {}
+    "E:\\Escuela_Jair\\PDI_PROYECT\\PDI_PROYECTO\\PDI_PROYECTO.csproj": {}
   },
   "projects": {
-    "E:\\Escuela_Jair\\PDI_PROYECTO\\PDI_PROYECTO\\PDI_PROYECTO.csproj": {
+    "E:\\Escuela_Jair\\PDI_PROYECT\\PDI_PROYECTO\\PDI_PROYECTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Escuela_Jair\\PDI_PROYECTO\\PDI_PROYECTO\\PDI_PROYECTO.csproj",
+        "projectUniqueName": "E:\\Escuela_Jair\\PDI_PROYECT\\PDI_PROYECTO\\PDI_PROYECTO.csproj",
         "projectName": "PDI_PROYECTO",
-        "projectPath": "E:\\Escuela_Jair\\PDI_PROYECTO\\PDI_PROYECTO\\PDI_PROYECTO.csproj",
+        "projectPath": "E:\\Escuela_Jair\\PDI_PROYECT\\PDI_PROYECTO\\PDI_PROYECTO.csproj",
         "packagesPath": "C:\\Users\\jasae\\.nuget\\packages\\",
-        "outputPath": "E:\\Escuela_Jair\\PDI_PROYECTO\\PDI_PROYECTO\\obj\\",
+        "outputPath": "E:\\Escuela_Jair\\PDI_PROYECT\\PDI_PROYECTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jasae\\AppData\\Roaming\\NuGet\\NuGet.Config",
