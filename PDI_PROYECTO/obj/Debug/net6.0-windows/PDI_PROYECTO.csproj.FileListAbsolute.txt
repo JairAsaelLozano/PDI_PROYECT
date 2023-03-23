@@ -32,3 +32,7 @@ E:\Escuela_Jair\PDI_PROYECT\PDI_PROYECTO\obj\Debug\net6.0-windows\refint\PDI_PRO
 E:\Escuela_Jair\PDI_PROYECT\PDI_PROYECTO\obj\Debug\net6.0-windows\PDI_PROYECTO.pdb
 E:\Escuela_Jair\PDI_PROYECT\PDI_PROYECTO\obj\Debug\net6.0-windows\PDI_PROYECTO.genruntimeconfig.cache
 E:\Escuela_Jair\PDI_PROYECT\PDI_PROYECTO\obj\Debug\net6.0-windows\ref\PDI_PROYECTO.dll
+E:\Escuela_Jair\PDI_PROYECT\PDI_PROYECTO\bin\Debug\net6.0-windows\AForge.dll
+E:\Escuela_Jair\PDI_PROYECT\PDI_PROYECTO\bin\Debug\net6.0-windows\AForge.Video.dll
+E:\Escuela_Jair\PDI_PROYECT\PDI_PROYECTO\bin\Debug\net6.0-windows\AForge.Video.DirectShow.dll
+E:\Escuela_Jair\PDI_PROYECT\PDI_PROYECTO\obj\Debug\net6.0-windows\PDI_PROYECTO.csproj.CopyComplete

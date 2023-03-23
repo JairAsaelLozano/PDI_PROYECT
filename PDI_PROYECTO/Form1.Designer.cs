@@ -87,6 +87,7 @@
             pictureBox1.Size = new Size(169, 164);
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // pictureBox2
             // 
@@ -108,6 +109,7 @@
             button1.TabIndex = 6;
             button1.Text = "Capturar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -121,6 +123,7 @@
             button2.TabIndex = 7;
             button2.Text = "Guardar";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // radioButton1
             // 
@@ -166,6 +169,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "FilterApp";
+            FormClosed += Form1_FormClosed;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
