@@ -13,8 +13,10 @@ namespace PDI_PROYECTO
         private VideoCaptureDevice miWEbCam;
         public Form1()
         {
-            CargaDispositivos();
+
             InitializeComponent();
+            CargaDispositivos();
+     
         }
         public void CargaDispositivos()
         {
@@ -25,8 +27,9 @@ namespace PDI_PROYECTO
                 for (int i = 0; i < MisDispositivos.Count; i++)
                 {
                     comboBox1.Items.Add(MisDispositivos[i].Name.ToString());
-                    comboBox1.Text = MisDispositivos[0].Name.ToString();
+          
                 }
+                comboBox1.Text = MisDispositivos[0].ToString();
             }
             else
             {
@@ -37,7 +40,8 @@ namespace PDI_PROYECTO
         private void Capturando(Object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap Imagen = (Bitmap)eventArgs.Frame.Clone();
-            pictureBox1.Image = Imagen;
+            pictureBox3.Image = Imagen;
+            int a = 0;
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,9 +91,24 @@ namespace PDI_PROYECTO
         {
             if(miWEbCam!= null && miWEbCam.IsRunning)
             {
-                pictureBox2.Image = pictureBox1.Image;
+                pictureBox2.Image = pictureBox3.Image;
                 pictureBox2.Image.Save(Path + "prueba.jpg", ImageFormat.Jpeg);
             }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            CerrarwebCam();
+            int i = comboBox1.SelectedIndex;
+            string NombreVideo = MisDispositivos[i].MonikerString;
+            miWEbCam = new VideoCaptureDevice(NombreVideo);
+            miWEbCam.NewFrame += new NewFrameEventHandler(Capturando);
+            miWEbCam.Start();
         }
     }
 }
