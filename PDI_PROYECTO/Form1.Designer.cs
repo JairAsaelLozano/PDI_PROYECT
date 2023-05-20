@@ -55,7 +55,8 @@
             label1.Name = "label1";
             label1.Size = new Size(115, 34);
             label1.TabIndex = 0;
-            label1.Text = "Camara: ";
+            label1.Text = "Cámara: ";
+            label1.Click += label1_Click;
             // 
             // comboBox1
             // 

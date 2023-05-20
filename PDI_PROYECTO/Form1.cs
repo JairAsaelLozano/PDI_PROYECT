@@ -300,5 +300,10 @@ namespace PDI_PROYECTO
             // Mostrar el histograma en el PictureBox
             Histograma.Image = histogramaBitmap;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
