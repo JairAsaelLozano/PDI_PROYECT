@@ -89,11 +89,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jasae\\OneDrive\\Desktop\\PDI_JAIR\\PDI_PROYECT\\PDI_PROYECTO\\PDI_PROYECTO.csproj",
+      "projectUniqueName": "C:\\Users\\jasae\\Documents\\PDI_PROYECT\\PDI_PROYECTO\\PDI_PROYECTO.csproj",
       "projectName": "PDI_PROYECTO",
-      "projectPath": "C:\\Users\\jasae\\OneDrive\\Desktop\\PDI_JAIR\\PDI_PROYECT\\PDI_PROYECTO\\PDI_PROYECTO.csproj",
+      "projectPath": "C:\\Users\\jasae\\Documents\\PDI_PROYECT\\PDI_PROYECTO\\PDI_PROYECTO.csproj",
       "packagesPath": "C:\\Users\\jasae\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jasae\\OneDrive\\Desktop\\PDI_JAIR\\PDI_PROYECT\\PDI_PROYECTO\\obj\\",
+      "outputPath": "C:\\Users\\jasae\\Documents\\PDI_PROYECT\\PDI_PROYECTO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jasae\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -146,7 +146,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   },
