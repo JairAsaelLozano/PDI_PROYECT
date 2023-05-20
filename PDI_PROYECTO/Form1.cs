@@ -1,12 +1,11 @@
 using AForge.Video;
 using AForge.Video.DirectShow;
 using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.ObjectiveC;
-using System.Windows.Forms;
-using System;
-using System.Drawing;
-using static System.Net.Mime.MediaTypeNames;
+using Emgu.CV;
+using Emgu.CV.CvEnum;
+using Emgu.CV.Structure;
+
+
 
 namespace PDI_PROYECTO
 {
@@ -23,6 +22,10 @@ namespace PDI_PROYECTO
         Sal_pimienta SalPimienta = new Sal_pimienta();
         Ruido_Gaussiano gasnoise = new Ruido_Gaussiano();
         Bitmap StaticImage;
+     
+        int Personas = 0;
+        static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
+
         public Form1()
         {
             InitializeComponent();
@@ -34,8 +37,38 @@ namespace PDI_PROYECTO
             comboBox2.Items.Add("Smooth");
             comboBox2.Items.Add("Sal & Pimienta");
             comboBox2.Items.Add("Ruido Gaussiano");
+            comboBox2.Items.Add("Rostros");
             comboBox2.SelectedIndex = 0;
         }
+
+        private void DetectarRostros(Object sender, NewFrameEventArgs eventArgs)
+        {
+            Image<Bgr, Byte> currentFrame = null;
+            Mat frame = new Mat();
+
+            currentFrame = frame.ToImage<Bgr, Byte>().Resize(pictureBox3.Width, pictureBox3.Height, Inter.Cubic);
+
+            Mat grayImage = new Mat();
+            CvInvoke.CvtColor(currentFrame, grayImage, ColorConversion.Bgr2Gray);
+            CvInvoke.EqualizeHist(grayImage, grayImage);
+
+            Rectangle[] faces = cascadeClassifier.DetectMultiScale(grayImage, 1.1, 3, Size.Empty, Size.Empty);
+
+
+            if (faces.Length > 0)
+            {
+                foreach (var face in faces)
+                {
+
+                    CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Red).MCvScalar, 2);
+
+                    Image<Bgr, Byte> resultImage = currentFrame.Convert<Bgr, Byte>();
+                    resultImage.ROI = face;
+                    //DetectedFace_PB.SizeMode = PictureBoxSizeMode.Zoom;
+                    //DetectedFace_PB.Image = resultImage.Bitmap;
+                }
+            }
+         }
 
         public void CargaDispositivos()
         {
@@ -68,7 +101,12 @@ namespace PDI_PROYECTO
         {
             Bitmap Imagen = (Bitmap)eventArgs.Frame.Clone();
             pictureBox3.Image = Imagen;
+
+      
+
         }
+
+
 
         private void CapturandoClustering(Object sender, NewFrameEventArgs eventArgs)
         {
@@ -82,7 +120,7 @@ namespace PDI_PROYECTO
             Bitmap Imagen = (Bitmap)eventArgs.Frame.Clone();
 
             pictureBox3.Image = bound.BoundaryExtraction(Imagen, 10);
-
+   
         }
 
         private void CapturandoSmooth(Object sender, NewFrameEventArgs eventArgs)
@@ -152,6 +190,7 @@ namespace PDI_PROYECTO
                 if (a == 0)
                 {
                     miWEbCam.NewFrame += new NewFrameEventHandler(CapturandoNormal);
+                  
                 }
                 if (a == 1)
                 {
@@ -176,6 +215,10 @@ namespace PDI_PROYECTO
                 if (a == 6)
                 {
                     miWEbCam.NewFrame += new NewFrameEventHandler(CapturandoGassNoise);
+                }
+                if (a == 7)
+                {
+                    miWEbCam.NewFrame += new NewFrameEventHandler(DetectarRostros);
                 }
             }
             if (imagenradio.Checked)

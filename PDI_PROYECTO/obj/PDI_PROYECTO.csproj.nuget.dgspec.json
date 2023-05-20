@@ -43,6 +43,10 @@
             "AForge.Video.DirectShow": {
               "target": "Package",
               "version": "[2.2.5, )"
+            },
+            "Emgu.CV.Wpf": {
+              "target": "Package",
+              "version": "[4.7.0.5276, )"
             }
           },
           "imports": [
